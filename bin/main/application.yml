@@ -1,0 +1,33 @@
+server:
+  port: 8088
+#debug: true
+
+spring:  
+  datasource:
+#   hikari下面主要用来配置数据库连接池相关的内容
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: HikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+#   数据库连接信息还是配在这里
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=oauth2
+    username: auth2
+    password: '000000'
+    driver-class-name: org.postgresql.Driver
+                
+  jpa:
+    database: postgresql
+    show-sql: true
+    properties:
+      hibernate: 
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: update
+        temp: 
+          use_jdbc_metadata_defaults: false

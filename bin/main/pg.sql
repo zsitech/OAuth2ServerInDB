@@ -1,4 +1,4 @@
---建表语句
+--建表语句,
 --oauth_access_token、oauth_client_details、oauth_refresh_token是必须的，其他的表本次没用到
 -- Table: oauth2.clientdetails
 
